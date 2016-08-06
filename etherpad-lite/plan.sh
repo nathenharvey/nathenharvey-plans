@@ -1,6 +1,7 @@
-# Plan Repository - https://github.com/nathenharvey/nathenharvey-plans
 pkg_origin=nathenharvey
 pkg_name=etherpad-lite
+pkg_description="A simple etherpad-lite service"
+pkg_upstream_url=https://github.com/nathenharvey/nathenharvey-plans
 pkg_version=1.6.0
 pkg_maintainer="Nathen Harvey <nharvey@chef.io>"
 pkg_license=('Apache-2.0')
@@ -16,5 +17,5 @@ do_build() {
 
 do_install() {
   ./bin/installDeps.sh
-  cp -vr ./* ${pkg_prefix}
+  cp -vr ./* "${pkg_prefix}"
 }
