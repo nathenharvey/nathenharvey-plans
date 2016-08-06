@@ -1,6 +1,7 @@
-# Plan Repository - https://github.com/nathenharvey/nathenharvey-plans
 pkg_origin=nathenharvey
 pkg_name=mytutorialapp
+pkg_upstream_url=https://github.com/nathenharvey/nathenharvey-plans
+pkg_description="mytutorialapp - a sample application based on the getting started tutorial"
 pkg_version=0.1.0
 pkg_maintainer="Nathen Harvey <nharvey@chef.io>"
 pkg_license=('Apache-2.0')
@@ -26,10 +27,10 @@ do_install() {
   # so now they need to be copied into the root directory of our package through
   # the pkg_prefix variable. This is so that we have the source files available
   # in the package.
-  cp package.json ${pkg_prefix}
-  cp server.js ${pkg_prefix}
+  cp package.json "$pkg_prefix"
+  cp server.js "$pkg_prefix"
 
   # Copy over the nconf module to the package that we installed in do_build().
-  mkdir -p ${pkg_prefix}/node_modules/
-  cp -vr node_modules/* ${pkg_prefix}/node_modules/
+  mkdir -p "$pkg_prefix/node_modules/"
+  cp -vr node_modules/* "$pkg_prefix/node_modules/"
 }
