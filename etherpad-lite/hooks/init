@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+ln -s {{pkg.path}}/config.json {{pkg.svc_path}}
+mkdir -p {{pkg.path}}/node_modules
+mkdir -p {{pkg.svc_path}}/node_modules
+ln -s {{pkg.path}}/src {{pkg.svc_path}}/node_modules/ep_etherpad-lite
+ln -s {{pkg.path}}/src {{pkg.path}}/node_modules/ep_etherpad-lite
